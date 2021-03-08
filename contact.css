@@ -1,5 +1,5 @@
 .header-img {
-  width: 100%;
+  width: 103%;
   height: 200px;
   background-size: cover;
 }
@@ -21,10 +21,13 @@ h1{color: #0E7886;
 }
 
 h3{color: #0E7886;
-
 }
-footer {
-  margin-top: 3em;
-  padding: 1em;
-  text-align: center;
+
+#leftnav
+{
+float: left;
+width: 300px;
+margin: 0;
+padding: 1em;
+line-height: 2.5;
 }
