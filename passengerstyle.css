@@ -31,18 +31,23 @@ padding: 1em;
 line-height: 2.5;
 }
 
-
-
-
-img {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
+button{
+	padding:20px;
+	background-color:#515c6e;
+	color:white;
+	font-size:16pt;
+	border-width:0px;
+}
+button:hover{
+	background-color:#c8d0de;
+	color:black;
+	border-width: 0px;
 }
 
 #content
 {
 margin-left: 250px;
+margin-top:0px;
 border-left: 1px solid gray;
 padding: 1em;
 text-align: center;
