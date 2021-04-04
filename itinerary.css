@@ -1,0 +1,99 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+}
+   
+#leftnav {
+    float: left;
+    width: 300px;
+    margin: 0;
+    padding: 1em;
+    line-height: 2.5;
+}
+  
+h1 {
+    color: #0E7886;
+    text-align: center;
+}
+
+#content {
+    margin-left: 250px;
+    margin-top:0px;
+    border-left: 1px solid gray;
+    padding: 1em;
+    text-align: center;
+    overflow: auto;
+}
+  
+#footer {
+    clear: both;
+    margin: 0;
+    padding: .5em;
+    color: #333;
+    background-color: #ddd;
+    border-top: 1px solid gray;
+}
+#rating {
+    font-size: 1.25rem;
+}
+.star {
+    color: goldenrod;
+    font-size: 1.25rem;
+    padding: 0rem; /* space out the stars */
+}
+
+.star::before {
+    content: '\2606';    /* star outline */
+    cursor: pointer;
+}
+
+.star.rated::before {
+    /* the style for a selected star */
+    content: '\2605';  /* filled star */
+}
+
+.stars {
+    text-align: left;
+    counter-reset: rateme 0;   
+    font-size: 2.0rem;
+    font-size: 30px;
+    margin-left: 120px;
+    margin-top: -10px;
+}
+
+.star.rated {
+    counter-increment: rateme 1;
+}
+
+#pictures{
+    margin-left: -15px;
+    margin-top:10px;
+}
+
+#column1 {
+    float:left; 
+    width:50%;
+}
+
+#column2 {
+    float: left;
+    width: 50%;
+    margin-left: 0px;
+    text-align: left;
+}
+
+h2 {
+    text-align: left;
+    margin-left: 55px;
+    font-size: 30px;
+    color: #0E7886;
+    border-bottom: 1px solid gray;
+}
+
+#review {
+    text-align: left;
+    margin-left: 55px;
+}
+
+#row {
+    height: 50px;
+}
