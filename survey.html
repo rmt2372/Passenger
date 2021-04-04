@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+        <head>
+                <meta charset="UTF-8">
+                <title> Destination Survey </title>
+                <link href="survey.css" rel="stylesheet">
+                <link rel="icon" href="mini_logo.png">
+                <script src="https://ajax.googleapis.com/ajax/libs/
+				jquery/3.6.0/jquery.min.js"></script>
+				<script src="survey.js"></script>
+        </head>
+<body>
+<div id="leftnav">
+  <a href = "Passenger.html">
+<img src="logo.png" alt="" width=200>
+</a>
+    <ul style="list-style-type:none; padding: 0;">
+  <li><a href="Passenger.html">HOME</a></li>
+  <li><a href="survey.html">DESTINATION SURVEY</a> </li>
+  <li><a href="blank_page.html">ALL DESTINATIONS </a></li>
+  <li> <a href="contactpage.html">CONTACT US</a></li>
+</ul>  
+</div>
+
+<div id="content">
+ <img src="otherpages_motto.png" alt="Passenger" width=90%>
+<h2>FIND A DESTINATION</h2>
+<form>
+	<table>
+		<tr>
+			<th>Where do you want to travel? <br> (select one) </th>
+			<th>Do you want to be near the coast? <br> (select one) </th>
+			<th>Which activities do you enjoy the most? <br> (check all that apply) </th>
+			<th>Are you a risk-taker? <br> (select one)</th>
+		</tr>
+		<tr>
+			<td><ul style="list-style-type:none; padding: 0;" class="choices">
+				<li onmouseover="rollover(this)" onmouseout="rollout(this)"><input type="radio" id="usa" name="location" value="USA"> USA</li>
+				<li onmouseover="rollover(this)" onmouseout="rollout(this)"><input type="radio" id="nonUSA" name="location" value="nonUSA"> International</li>
+			</ul></td>
+
+			<td><ul style="list-style-type:none; padding: 0;" class="choices">
+				<li onmouseover="rollover(this)" onmouseout="rollout(this)"><input type="radio" id="coast" name="coast" value="yes"> Yes</li>
+				<li onmouseover="rollover(this)" onmouseout="rollout(this)"><input type="radio" id="noCoast" name="coast" value="no"> No</li>
+			</ul></td>
+
+			<td><ul style="list-style-type:none; padding: 0;" class="choices">
+				<li onmouseover="rollover(this)" onmouseout="rollout(this)"><input type="checkbox" name="activities[]" value="ski"> Skiing</li>
+				<li onmouseover="rollover(this)" onmouseout="rollout(this)"><input type="checkbox" name="activities[]" value="surf"> Surfing</li>
+				<li onmouseover="rollover(this)" onmouseout="rollout(this)"><input type="checkbox" name="activities[]" value="hike"> Hiking</li>
+				<li onmouseover="rollover(this)" onmouseout="rollout(this)"><input type="checkbox" name="activities[]" value="city"> City Touring</li>
+				<li onmouseover="rollover(this)" onmouseout="rollout(this)"><input type="checkbox" name="activities[]" value="relax"> Relaxing</li>
+			</ul></td>
+			<td><ul style="list-style-type:none; padding: 0;" class="choices">
+				<li onmouseover="rollover(this)" onmouseout="rollout(this)"><input type="radio" id="risk" name="risk" value="yes"> Yes</li>
+				<li onmouseover="rollover(this)" onmouseout="rollout(this)"><input type="radio" id="noRisk" name="risk" value="no"> No</li>
+			</ul></td>
+	</table>
+	<input id="button" type="button"onmouseover="rollover(this)" onmouseout="rollout(this)" onclick="confirm()" value="Find Destinations!">
+</form>
+
+</div>
+<div id="footer">
+Page last updated 04/04/2021
+</div>
+</div>
+</body>
+</html>
