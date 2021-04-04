@@ -1,37 +1,36 @@
 * {
-  box-sizing: border-box;
+  	box-sizing: border-box;
 }
 
 body {
-  font-family: Arial, Helvetica, sans-serif;
+  	font-family: Arial, Helvetica, sans-serif;
 }
+
 h2 {
 	color: #0E7886;
 }
-.floatleft
-{
-padding: 70px 0;
-float: left;
-width: 200px;
+
+.floatleft {
+	padding: 70px 0;
+	float: left;
+	width: 200px;
 }
 
-#container
-{
-width: 90%;
-margin: 20px auto;
-background-color: #fff;
-color: #333;
-border: 1px solid gray;
-line-height: 130%;
+#container {
+	width: 90%;
+	margin: 20px auto;
+	background-color: #fff;
+	color: #333;
+	border: 1px solid gray;
+	line-height: 130%;
 }
 
-#leftnav
-{
-float: left;
-width: 300px;
-margin: 0;
-padding: 1em;
-line-height: 2.5;
+#leftnav {
+	float: left;
+	width: 300px;
+	margin: 0;
+	padding: 1em;
+	line-height: 2.5;
 }
 
 button{
@@ -47,28 +46,26 @@ button:hover{
 	border-width: 0px;
 }
 
-#content
-{
-margin-left: 250px;
-margin-top:0px;
-border-left: 1px solid gray;
-padding: 1em;
-text-align: center;
+#content {
+	margin-left: 250px;
+	margin-top:0px;
+	border-left: 1px solid gray;
+	padding: 1em;
+	text-align: center;
 }
-.content p
-{  
-line-height: 1.5;
-display: inline-block;
-vertical-align: middle;}
 
-#footer
-{
-clear: both;
-margin: 0;
-padding: .5em;
-color: #333;
-background-color: #ddd;
-border-top: 1px solid gray;
+.content p {  
+	line-height: 1.5;
+	display: inline-block;
+	vertical-align: middle;}
+
+#footer {
+	clear: both;
+	margin: 0;
+	padding: .5em;
+	color: #333;
+	background-color: #ddd;
+	border-top: 1px solid gray;
 }
 
 /* Responsive layout - makes the menu and the content (inside the section) sit on top of each other instead of next to each other */
