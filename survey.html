@@ -25,7 +25,8 @@
 <div id="content">
  <img src="otherpages_motto.png" alt="Passenger" width=90%>
 <h2>FIND A DESTINATION</h2>
-<form>
+
+<form method="POST" id="form" action="surveyResults.php">
 	<table>
 		<tr>
 			<th>Where do you want to travel? <br> (select one) </th>
@@ -36,7 +37,7 @@
 		<tr>
 			<td><ul style="list-style-type:none; padding: 0;" class="choices">
 				<li onmouseover="rollover(this)" onmouseout="rollout(this)"><input type="radio" id="usa" name="location" value="USA"> USA</li>
-				<li onmouseover="rollover(this)" onmouseout="rollout(this)"><input type="radio" id="nonUSA" name="location" value="nonUSA"> International</li>
+				<li onmouseover="rollover(this)" onmouseout="rollout(this)"><input type="radio" id="international" name="location" value="international"> International</li>
 			</ul></td>
 
 			<td><ul style="list-style-type:none; padding: 0;" class="choices">
@@ -45,18 +46,18 @@
 			</ul></td>
 
 			<td><ul style="list-style-type:none; padding: 0;" class="choices">
-				<li onmouseover="rollover(this)" onmouseout="rollout(this)"><input type="checkbox" name="activities[]" value="ski"> Skiing</li>
-				<li onmouseover="rollover(this)" onmouseout="rollout(this)"><input type="checkbox" name="activities[]" value="surf"> Surfing</li>
-				<li onmouseover="rollover(this)" onmouseout="rollout(this)"><input type="checkbox" name="activities[]" value="hike"> Hiking</li>
-				<li onmouseover="rollover(this)" onmouseout="rollout(this)"><input type="checkbox" name="activities[]" value="city"> City Touring</li>
-				<li onmouseover="rollover(this)" onmouseout="rollout(this)"><input type="checkbox" name="activities[]" value="relax"> Relaxing</li>
+				<li onmouseover="rollover(this)" onmouseout="rollout(this)"><input type="checkbox" name="activities[]" value="skiing"> Skiing</li>
+				<li onmouseover="rollover(this)" onmouseout="rollout(this)"><input type="checkbox" name="activities[]" value="surfing"> Surfing</li>
+				<li onmouseover="rollover(this)" onmouseout="rollout(this)"><input type="checkbox" name="activities[]" value="hiking"> Hiking</li>
+				<li onmouseover="rollover(this)" onmouseout="rollout(this)"><input type="checkbox" name="activities[]" value="city touring"> City Touring</li>
+				<li onmouseover="rollover(this)" onmouseout="rollout(this)"><input type="checkbox" name="activities[]" value="relaxing"> Relaxing</li>
 			</ul></td>
 			<td><ul style="list-style-type:none; padding: 0;" class="choices">
 				<li onmouseover="rollover(this)" onmouseout="rollout(this)"><input type="radio" id="risk" name="risk" value="yes"> Yes</li>
 				<li onmouseover="rollover(this)" onmouseout="rollout(this)"><input type="radio" id="noRisk" name="risk" value="no"> No</li>
 			</ul></td>
 	</table>
-	<input id="button" type="button"onmouseover="rollover(this)" onmouseout="rollout(this)" onclick="confirm()" value="Find Destinations!">
+	<input id="button" type="button" onmouseover="rollover(this)" onmouseout="rollout(this)" onclick="confirm()" value="Find Destinations!">
 </form>
 
 </div>
