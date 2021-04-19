@@ -1,0 +1,103 @@
+.floatleft
+{
+padding: 70px 0;
+float: left;
+width: 200px;
+}
+
+#container
+{
+width: 90%;
+margin: 20px auto;
+background-color: #fff;
+color: #333;
+border: 1px solid gray;
+line-height: 130%;
+}
+
+#leftnav
+{
+float: left;
+width: 300px;
+margin: 0;
+padding: 1em;
+line-height: 2.5;
+}
+
+#table {
+  background-color: #F2F2F2;
+  border: 3px solid black;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
+#content
+{
+margin-left: 250px;
+margin-top:0px;
+border-left: 1px solid gray;
+padding: 1em;
+text-align: center;
+}
+
+#footer
+{
+clear: both;
+margin: 0;
+padding: .5em;
+color: #333;
+background-color: #ddd;
+border-top: 1px solid gray;
+}
+
+body{
+        background-color: #d4edf0;
+
+}
+
+h1{
+        text-align: center;
+        color: #000000;
+        font-family: Playfair Display;
+        font-size: 48px;
+}
+
+h2{
+        text-align: center;
+        color: #000000;
+        font-family: Playfair Display;
+        font-size: 30px;
+}
+
+h3{
+        color:  #0E7886;
+}
+
+p{
+        text-align: center;
+}
+
+#button{
+        text-align: center;
+}
+
+#table2 {
+        text-align: center;
+        margin-left: auto;
+        margin-right: auto;
+        width: 60%;
+        color: #000000;
+}
+
+#dest {
+        background-color: #ffffff;
+        background-position: center;
+        border: solid black 1pt;
+        border-radius: 10px;
+        padding: 1em;
+        text-align: center;
+        margin-left: auto;
+        margin-right: auto;
+}
