@@ -1,11 +1,15 @@
-console.log("12")
 function confirm(){
-	q1_answered = ($("#usa").is(":checked")) || ($("#nonUSA").is(":checked"))
+	q1_answered = ($("#usa").is(":checked")) || ($("#international").is(":checked"))
 	q2_answered = ($("#coast").is(":checked")) || ($("#noCoast").is(":checked"))
 	q3_answered = $('[name="activities[]"]:checked').length >0
 	q4_answered = ($("#risk").is(":checked")) || ($("#noRisk").is(":checked"))
+	console.log(q1_answered);
+	console.log(q2_answered);
+	console.log(q3_answered);
+	console.log(q4_answered);
 	if (q1_answered && q2_answered && q3_answered && q4_answered){
-		alert("All questions answered. Survey results will be added soon!")
+		//alert("All questions answered. Survey results will be added soon!")
+		$("form").submit()
 	} else {
 		alert("Please answer every question.")
 	}
