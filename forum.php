@@ -4,7 +4,7 @@
 	<title>Community Forum</title>
 	<meta charset="UTF-8">
 	<meta name="description" content="Forum">
-	<link href="commforum.css" rel="stylesheet">
+	<link href="commforum2.css" rel="stylesheet">
 	<link rel="icon" href="mini_logo.png">
 </head>
 
