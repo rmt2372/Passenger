@@ -5,9 +5,6 @@
                 <title> Destination Survey </title>
                 <link href="all_dest.css" rel="stylesheet">
                 <link rel="icon" href="mini_logo.png">
-                <script src="https://ajax.googleapis.com/ajax/libs/
-				jquery/3.6.0/jquery.min.js"></script>
-				<script src="survey.js"></script>
         </head>
 <body>
 <div id="leftnav">
@@ -60,20 +57,81 @@
 		echo ":</p>";
 	}
 	
-?>
+##########
+//use MySQL to get destinations
+$server = "spring-2021.cs.utexas.edu"; 
+$user   = "cs329e_bulko_aes4693";
+$pwd    = "door4Along3Enough"; 
+$dbName = "cs329e_bulko_aes4693";  
+$mysqli = new mysqli ($server,$user,$pwd,$dbName);
 
-<p style = "font-size:8pt">Passenger is still under construction. In the meantime, here are some of our most popular destinations!</p>
-  <table id="destinations">
-    <tr>
-      <td><a href="Anchorage.html"><img height="150" width="150" src="dest_images/anchorage.jpeg"><br>Anchorage, Alaska</a></td>
-      <td><a href="Andaman.html"><img height="150" width="150" src="dest_images/andaman-2.jpeg"><br>Andaman Islands, India</a></td>
-      <td><a href="Bali.html"><img height="150" width="150" src="dest_images/adLRxQj_700b.jpg"><br>Bali, Indonesia</a></td>
-      <td><a href="Edinburgh.html"><img height="150" width="150" src="dest_images/edinburgh.jpeg"><br>Edinburgh, Scotland</a></td>
-    </tr><tr>
-</table>
+// If it returns a non-zero error number, print a
+// message and stop execution immediately
+if ($mysqli->connect_errno) {
+	die('Connect Error: ' . $mysqli->connect_errno .
+		": " . $mysqli->connect_error);
+}
+//choose destinations by location
+if ($location == "USA"){
+	$command = "SELECT * FROM destinations WHERE 
+		location = \"US\"";
+}else{
+	$command = "SELECT * FROM destinations WHERE 
+		location = \"Non-US\"";
+}
+//choose coast preference
+if ($coast == "yes"){
+	$command = $command." AND coast = \"y\"";
+} else{
+	$command = $command." AND coast = \"n\"";
+}
+
+// check for activity preference
+$act = "";
+for ($i=0; $i<count($activities); $i++){
+	$a = "";
+	if ($i != 0){
+	$a = $a." OR ";	
+	}
+	if ($activities[$i] == "city touring"){
+		$a = $a."city_touring = \"y\"";
+	} else {
+		$a = $a.$activities[$i]."=\"y\"";
+	}
+	$act = $act.$a;
+}
+$command = $command." AND (".$act.")";
+
+//risk-taker
+if ($risk == "yes"){
+	$command = $command." AND risk = \"y\"";
+} else{
+	$command = $command." AND risk = \"n\"";
+}
+
+
+$result = $mysqli->query($command);
+
+//if no answers available
+if ($result->num_rows === 0){
+	echo "<span style='color:blue'>There are no destinations currently available that fit your preference. <a href='survey.html'> Take the survey again?</a></span>";
+}
+//show results
+echo "<table id='destinations'> <tr>";
+while ($row = $result->fetch_assoc()) {
+	$dest = $row["name"];
+	$photo = $row["photo"];
+	$page = $row["htmlPage"];
+print <<<TR
+	<td><a href='$page'><img height='150' width='150' src='dest_images/$photo'><br>$dest</a></td>
+TR;
+
+}
+echo "</tr></table>";
+?>
 </div>
 <div id="footer">
-Page last updated 04/04/2021
+Page last updated 04/25/2021
 </div>
 </div>
 </body>
