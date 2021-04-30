@@ -28,11 +28,11 @@ h2 {
 
 
 button{
-	padding:20px;
-	background-color:#515c6e;
+	padding:15px;
+	background-color:#37bfbf;
 	border-radius: 10px 10px 10px 10px;
 	color:white;
-	font-size:16pt;
+	font-size:14pt;
 	border-width:0px;
 }
 button:hover{

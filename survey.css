@@ -79,14 +79,31 @@ td{
 	text-align:justify;
 }
 
+/*#button{
+	padding:15px;
+	border-radius: 10px 10px 10px 10px;
+	background-color:#37bfbf;
+	font-size:14pt;
+	color:black;
+	margin-top:10%;
+	border:0px;
+}*/
+
 #button{
 	padding:15px;
 	background-color:#37bfbf;
-	font-size:14pt;
+	border-radius: 10px 10px 10px 10px;
 	color:white;
-	margin-top:10%;
-	border:0px;
+	font-size:14pt;
+	border-width:0px;
 }
+#button:hover{
+	background-color:#c8d0de;
+	border-radius: 10px 10px 10px 10px;
+	color:black;
+	border-width: 0px;
+}
+
 
 img{
 	border-radius: 5px 5px 5px 5px;
