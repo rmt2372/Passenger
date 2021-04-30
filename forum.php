@@ -5,6 +5,7 @@
 	<meta charset="UTF-8">
 	<meta name="description" content="Forum">
 	<link href="commforum2.css" rel="stylesheet">
+	<link rel="stylesheet" href="leftnav.css">
 	<link rel="icon" href="mini_logo.png">
 </head>
 

@@ -38,7 +38,7 @@ h3{color: #0E7886;
 {
 margin-left: 250px;
 margin-top:0px;
-border-left: 1px solid gray;
+border-left: 1px solid white;
 padding: 1em;
 text-align: center;
 }
@@ -87,4 +87,9 @@ td{
 	margin-top:10%;
 	border:0px;
 }
+
+img{
+	border-radius: 5px 5px 5px 5px;
+}
+
 
