@@ -1,3 +1,7 @@
+* {
+  	box-sizing: border-box;
+}
+
 #leftnav {
 	float: left;
 	width: 300px;
@@ -28,9 +32,7 @@
 	color: white;
 	margin-right: 30px;
 	width: 320px;
-
-/*	text-align: center;
-*/	padding: 10px 10px 10px 10px;
+	padding: 10px 10px 10px 10px;
 	text-decoration: none;
 }
 
@@ -38,12 +40,7 @@
 	background-color: #dff2f5;
 	width: 240px;
 	border-radius: 10px 10px 10px 10px;
-
 	color: black;
-}
-
-#leftnav a:link {
-  text-decoration: none;
 }
 
 #leftnav a:hover {
