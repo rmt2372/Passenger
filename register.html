@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+        <head>
+                <meta charset="UTF-8">
+                <title> Register </title>
+                <link href="contact.css" rel="stylesheet">
+                <link rel="stylesheet" href="leftnav.css">
+                <link rel="icon" href="mini_logo.png">
+                <script src="register.js"></script>
+        </head>
+<body>
+<div id="leftnav">
+  <a href = "Passenger.html">
+<img src="logo.png" alt="" width=200>
+</a>
+    <ul style="list-style-type:none; padding: 0;">
+  <li><a href="Passenger.html">HOME</a></li>
+  <li><a href="survey.html">DESTINATION SURVEY</a> </li>
+  <li><a href="alldestinationspage2.html">ALL DESTINATIONS </a></li>
+  <li><a href="forum.php">FORUM </a></li>
+  <li> <a href="contactpage.html">CONTACT US</a></li>
+</ul>  
+</div>
+
+<div id="content">
+ <img src="otherpages_motto.png" alt="Passenger" width=90%>
+<h1>Create a new account. It's free!</h1>
+<form>
+<table style = "text-align:left; margin-left:35%">
+	<tr>
+		<td style = "padding:10px"> username: </td>
+		<td><input name="user" id="user" onkeyup="userValidate()"></td>
+		<td id="userCheck" style = "width:400px"></td>
+	</tr>
+	<tr>
+		<td style = "padding:10px"> password:</td>
+		<td><input name="pass" id="pass" type="password" onkeyup="passValidate()"></td>
+		<td id="passCheck" style = "width:400px"></td>
+	</tr>
+	<tr>
+		<td style = "padding:10px"> confirm password:</td>
+		<td><input name="pass2" id="pass2" type="password" onkeyup="pass2Validate()"></td>
+		<td id="pass2Check" style = "width:400px"></td>
+	</tr>
+</table>
+<input type="button" value="Register" onclick="register()">
+</form>
+<div id="ajaxDiv"></div>
+</div>
+
+</body>
+</html>

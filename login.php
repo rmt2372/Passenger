@@ -1,78 +1,66 @@
+<!DOCTYPE html>
 <html lang="en">
-
-<head>
-	<title>Login</title>
-	<meta charset="UTF-8">
-	<meta name="description" content="Login">
-	<link href="commforum.css" rel="stylesheet">
-	<link rel="icon" href="mini_logo.png">
-</head>
-
+        <head>
+                <meta charset="UTF-8">
+                <title> Contact Us </title>
+                <link href="contact.css" rel="stylesheet">
+                <link rel="stylesheet" href="leftnav.css">
+                <link rel="icon" href="mini_logo.png">
+        </head>
 <body>
+<div id="leftnav">
+  <a href = "Passenger.html">
+<img src="logo.png" alt="" width=200>
+</a>
+    <ul style="list-style-type:none; padding: 0;">
+  <li><a href="Passenger.html">HOME</a></li>
+  <li><a href="survey.html">DESTINATION SURVEY</a> </li>
+  <li><a href="alldestinationspage2.html">ALL DESTINATIONS </a></li>
+  <li><a href="forum.php">FORUM </a></li>
+  <li> <a href="contactpage.html">CONTACT US</a></li>
+</ul>  
+</div>
 
-	<h2>Already Signed Up? Login!</h2>
+<div id="content">
+ <img src="otherpages_motto.png" alt="Passenger" width=90%>
+	<h1>Already signed up? Login!</h1>
+<?php
+	$username = $_POST['user'];
+	$password = $_POST['pass'];
+	 $mysqli = new mysqli('spring-2021.cs.utexas.edu', 'cs329e_bulko_aes4693', 'door4Along3Enough', 'cs329e_bulko_aes4693');
 
-	<?php
-		//open file 
-		//intialize success to false
-		$myFile = fopen("passwd.txt", "r");
-		$success = false;
-		while (!feof($myFile)) {
-			$line = fgets($myFile);
-			if (trim($line) != "") {
+        $command = "SELECT * FROM passengerLogin WHERE
+                username = '$username' AND password = '$password'";
+        $result = $mysqli->query($command);
 
-				//get id and pw
-				//does file match form
-				$pieces = explode(":", $line);
-				if (trim(explode(":", $line)[0]) == $_POST["userName"]
-					&& trim(explode(":", $line)[1]) == $_POST["password"]) {
+        if ($result->num_rows === 0){
+		//username and password not found in table
+		echo '<span style="color:red">Invalid account. Please create an account to continue.</span>';
 
-					// if the id and password match what was submitted in the form, login successful
-					$success = true;
-				}
-			}
-		}
-		//close file
-		fclose("myFile");
+        } else{
+		setcookie("login", true, time() + 1200, "/");
+		session_start();
+		//can set header location
+	//	header("Location: ".$_SESSION["page"]);
+	}
 
-		//login
-		if ($success == true) {
-			// set cookie, the timer at 20 minute
-			setcookie("login", true, time() + 1200, "/");
-			session_start();
-			//can set header location
-			header("Location: ".$_SESSION["page"]);
-
-		//check validity of login
-		} else if ($_POST["userName"] != null and $_POST["password"] != null) {
-			echo '<script type="text/JavaScript"> alert("Invalid Account. Please create an account to continue!") </script>';
-		}
-	?>
-
-	<form action="<?php echo $_SERVER["PHP_SELF"]; ?>" method="post">
-<br>
-	<table style="margin-left:auto;margin-right:auto;">
-
-		
-		<tr>
-			<td>Username or Email: </td>
-			<td> <input type="text" name="userName"/></td>
-		</tr>
-
-		<tr><td><br /></td></tr>
-
-		<tr>
-			<td>Password: </td>
-			<td> <input type="text" name="password"/></td>
-		</tr>
-
-	</table>
-			<div>
-			<p> <input type="submit" id="button" value="Login"/></p>
-			<p> <a href="register.php">Create an account</a></p>
-		</div>
-	</form>
-	<p><b> Forgot your password?</b><br> <br>
+?>
+<form method="POST" action="login.php">
+<table style = "text-align:left; margin:auto;">
+	<tr>
+		<td style = "padding:10px"> username: </td>
+		<td><input name="user" id="user"></td>
+	</tr>
+	<tr>
+		<td style = "padding:10px"> password:</td>
+		<td><input name="pass" id="pass" type="password"></td>
+	</tr>
+</table>
+<input type="submit" value="Login">
+</form>
+<a href="register.html"><input type="button" value="Create a new account"></a>
+<p><b> Forgot your password?</b><br> <br>
 	Send us an e-mail at <br><em> passenger-customerservice@gmail.com</em> </p>
+</div>
 </body>
 </html>
