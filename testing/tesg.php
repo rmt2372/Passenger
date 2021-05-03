@@ -9,10 +9,10 @@
 	<link rel="icon" href="mini_logo.png">
 </head>
 <body>
-	 <script language = "javascript" type = "text/javascript">
+		 <script language = "javascript" type = "text/javascript">
 
             //Browser Support Code
-            function ajaxFunction(user,pwd){
+            function ajaxFunction(user,review,destination){
                var ajaxRequest;  // The variable that makes Ajax possible!
                
                ajaxRequest = new XMLHttpRequest();
@@ -30,12 +30,13 @@
                // Now get the value from user and pass it to server script.
 					
                var user = document.getElementById('user').value;
-               var pwd = document.getElementById('pwd').value;
+               var review = document.getElementById('review').value;
+	       var destination = document.getElementById('destination').value;
                var queryString = "?user=" + user ;
             
-               queryString +=  "&pwd=" + pwd;
+               queryString +=  "&review=" + review + "&destination=" + destination;;
                
-               ajaxRequest.open("GET", "HW17.php" + queryString, true);
+               ajaxRequest.open("GET", "reviewform.php" + queryString, true);
                ajaxRequest.send(null);
             }
 
@@ -70,27 +71,31 @@
 <br><p>Here's some of our Passengers' travel tips they have shared with us!<br><br> Have some advice to share?<br> <b>Send us an email</b> at <br> <em>passenger-advice@gmail.com!</em></p>
 
 
-      <form method = "POST" name = 'myForm'>
+<table width = "75%">
+<form method = "POST" name = 'myForm'>
+<tr>
+<td> Enter name </td>
+<td> <input type = "text" id = 'user' size = "30" /></td>
+</tr>
+<tr>
+<td> Enter Destination (Location, Country i.e Bali,Indonesia) </td>
+<td> <input type = "text" id = 'destination' size = "30" /></td>
+</tr>
 
-      	<h3> Review </h3>
-
-        <?php
-
-   		    echo "<h3> Rview </h3>";
-   		    echo "<table><tr><td>User Name</td>";
-          echo "<td> <input type = 'text' id = 'user' /> </td>";
-   		    echo "</tr> <tr>";
-          echo "<td>Review</td>";
-   		    echo "<td> <input type = 'text' id = 'pwd' /> </td>";
-   		    echo "</tr> <tr> <td>";
-          echo "<input type = \"reset\" value = \"Reset\" />";
-          echo "<input type = \"button\" onclick = \"ajaxFunction('$user','$pwd')\" value = \"Query MySQL\"/> <br><br> ";
-		      echo "</td> </tr>	</table>";  
-        ?>
-      </form>
-      
-      <div id = 'ajaxDiv'>Result of Forum</div>
-
+<tr>
+<td> Enter reviews </td>
+<td><textarea id = 'review' rows = "4" cols = "36"> Enter your comments here: </textarea></td>
+</tr>
+<tr>
+<td> &nbsp; </td> <td> &nbsp; </td>
+</tr>
+<tr>
+<td><input type = "submit" onclick="ajaxFunction('$user','$destination','$review')" /></td>
+<td><input type = "reset" value = "Reset" /></td>
+</tr>
+</form>
+</table>
+<div id = 'ajaxDiv'>Result of Forum</div>
 <table id = "table2">
 	<tr>
 	<td id="dest">
