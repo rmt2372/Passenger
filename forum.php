@@ -47,7 +47,7 @@
 </tr>
 <tr>
 <td> Review </td>
-<td>  <textarea name = "review" rows = "4" cols = "36"> Enter your comments here: </textarea></td>
+<td>  <textarea name = "review" rows = "4" cols = "36" placeholder="Write something.."></textarea></td>
 </tr>
 <tr>
 <td> &nbsp; </td> <td> &nbsp; </td>
