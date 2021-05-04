@@ -39,7 +39,7 @@
 
 <br><p>Here's some of our Passengers' travel tips they have shared with us!<br><br> Have some advice to share?<br> <b>Send us an email</b> at <br> <em>passenger-advice@gmail.com!</em></p>
 <h2> REVIEW FORM </h2>
-<table width = "75%">
+<table style="margin-left:500px; "width = "50%">
 <form action = "reviewform.php" method = "post">
 <tr>
 <td> Enter name </td>
