@@ -10,12 +10,11 @@
 	if ($result->num_rows === 0){
 		//username and password not found in table - need to add
 		$command = "INSERT INTO passengerLogin VALUES ('$username', '$password')";
-		echo $command;
 		$result = $mysqli->query($command);
 		setcookie("login", true, time()+ 1200, "/");
 		session_start();
 		//can set header location
-		header("Location: forum.php");
+		echo "Success!";
 
 	} else{
 		//username already exists

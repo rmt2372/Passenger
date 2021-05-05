@@ -33,15 +33,19 @@
                 username = '$username' AND password = '$password'";
         $result = $mysqli->query($command);
 
-        if ($result->num_rows === 0){
+	if (strlen($username) != 0){
+		//something  entered
+	if ($result->num_rows === 0){
 		//username and password not found in table
 		echo '<span style="color:red">Invalid account. Please create an account to continue.</span>';
 
-        } else{
+        } else {
 		setcookie("login", true, time() + 1200, "/");
 		session_start();
 		//can set header location
-		header("Location: forum.php");
+		echo "kjsdjghsdkjgh";
+		header('Location: forum.php');
+	}
 	}
 
 ?>
