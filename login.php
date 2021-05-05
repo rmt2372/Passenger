@@ -41,7 +41,7 @@
 		setcookie("login", true, time() + 1200, "/");
 		session_start();
 		//can set header location
-	//	header("Location: ".$_SESSION["page"]);
+		header("Location: forum.php");
 	}
 
 ?>
