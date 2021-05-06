@@ -51,17 +51,27 @@ padding: 1em;
 text-align: center;
 }
 
-
-#footer {
-    clear: both;
-    margin: 0;
-    padding: .5em;
-    color: #333;
-    background-color: #ddd;
-    border-top: 1px solid gray;
+td{
+  width:300px;
+  padding:10px;
 }
 
-img{
-  border-radius: 5px 5px 5px 5px;
+
+#contactInfo a {
+  display: block;
+  color: blue;
+  text-decoration: underline;
 }
+
+#contactInfo{
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  max-width: 300px;
+  margin: auto;
+  text-align: center;
+}
+
+img:hover, a:hover {
+  opacity: 0.7;
+}
+
 

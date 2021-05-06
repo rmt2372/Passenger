@@ -70,7 +70,11 @@ function userValidate(){
 			ajaxRequest.onreadystatechange = function(){
 				if (ajaxRequest.readyState == 4){
 					ajaxDisplay = document.getElementById('ajaxDiv')
-					ajaxDisplay.innerHTML = ajaxRequest.responseText
+					if (ajaxRequest.responseText == "Success!"){
+						window.location.href = "forum.php"
+					} else{
+						ajaxDisplay.innerHTML = ajaxRequest.responseText
+					}
 				}
 			}
 			username = document.getElementById('user').value
@@ -82,3 +86,5 @@ function userValidate(){
 			alert('All fields must be correctly filled in')
 		}
 	}
+
+	
