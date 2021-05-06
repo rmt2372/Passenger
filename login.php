@@ -27,7 +27,7 @@
 <?php
 	$username = $_POST['user'];
 	$password = $_POST['pass'];
-	 $mysqli = new mysqli('spring-2021.cs.utexas.edu', 'cs329e_bulko_aes4693', 'door4Along3Enough', 'cs329e_bulko_aes4693');
+	 $mysqli = new mysqli('spring-2021.cs.utexas.edu', 'cs329e_bulko_rmt2372', 'Wash9runway*Organ', 'cs329e_bulko_rmt2372');
 
         $command = "SELECT * FROM passengerLogin WHERE
                 username = '$username' AND password = '$password'";

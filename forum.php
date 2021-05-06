@@ -6,10 +6,36 @@
 	<meta name="description" content="Forum">
 	<link href="commforum2.css" rel="stylesheet">
 	<link rel="stylesheet" href="leftnav.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script> 
 	<link rel="icon" href="mini_logo.png">
 </head>
 <body>
+	<script language = "javascript" type = "text/javascript">
+		//Browser Support Code
+		function ajaxFunction(server,user,pwd,dbName){
+		var ajaxRequest;  // The variable that makes Ajax possible!
+		
+		ajaxRequest = new XMLHttpRequest();
+				
+		ajaxRequest.onreadystatechange = function(){
+			if(ajaxRequest.readyState == 4){
+				var ajaxDisplay = document.getElementById('table2');
+				ajaxDisplay.innerHTML = ajaxRequest.responseText;
+			} 
+		}
+						
+		var name = document.getElementById('name').value;
+		var destination = document.getElementById('destination').value;
+		var text = document.getElementById('text').value;
+		var queryString = "?name=" + name ;
 
+		queryString +=  "&destination=" + destination + "&text=" + text;
+		console.log(queryString);
+		ajaxRequest.open("GET", "reviewform.php" + queryString, true);
+		ajaxRequest.send(null);
+		}
+
+	</script>
 	</div>
 		<div id="leftnav">
         <a href = "Passenger.html">
@@ -24,7 +50,6 @@
         </ul>  
     </div>
 
-
 	<?php
 		if (!isset ($_COOKIE["login"])) {
 			session_start();
@@ -37,53 +62,36 @@
 	?>
 		<h2>Welcome to Passenger's Community Forum </h2>
 
-<br><p>Here's some of our Passengers' travel tips they have shared with us!<br><br> Have some advice to share?<br> <b>Send us an email</b> at <br> <em>passenger-advice@gmail.com!</em></p>
-<h2> REVIEW FORM </h2>
-<table style="margin-left:500px; "width = "50%">
-<form action = "reviewform.php" method = "post">
-<tr>
-<td> Enter name </td>
-<td> <input type = "text" name = "name" size = "30" /></td>
-</tr>
-<tr>
-<td> Review </td>
-<td>  <textarea name = "review" rows = "4" cols = "36" placeholder="Write something.."></textarea></td>
-</tr>
-<tr>
-<td> &nbsp; </td> <td> &nbsp; </td>
-</tr>
-<tr>
-<td><input type = "submit" value = "Submit" /></td>
-<td><input type = "reset" value = "Reset" /></td>
-</tr>
-</form>
-</table>
+	<br><p>Here's some of our Passengers' travel tips they have shared with us!<br><br> Have some advice to share?<br> <b>Send us an email</b> at <br> <em>passenger-advice@gmail.com!</em></p>
+	<h2> REVIEW FORM </h2>
+	<table style="margin-left:500px; "width = "50%">
+		<form method = "POST">
+			<?php
+				$server = "spring-2021.cs.utexas.edu";
+				$user   = "cs329e_bulko_rmt2372";
+				$pwd    = "Wash9runway*Organ";
+				$dbName = "cs329e_bulko_rmt2372";
+				
+				$mysqli = new mysqli($server, $user, $pwd, $dbName);
+				$mysqli->select_db($dbName) or die($mysqli->error);
+				$query = "SELECT * FROM reviews";
+				$result = $mysqli->query($query);
+				$display_string = "<table id = 'table2'>";
+				while($row = $result->fetch_array(MYSQLI_ASSOC)) {
+					$display_string .= "<tr><td id='dest'><h3>$row[destination]</h3><p>\"$row[text]\" &nbsp;&nbsp; - $row[reviewName]</p><tr><td><br /></td></tr>";
+				}
+				$display_string .= "</table>";
+				echo "<tr><td> Enter name </td><td> <input type = 'text' name = 'name' id = 'name' size = '30' /></td></tr>";
+				echo "<tr><td> Destination </td><td> <input type = 'text' name = 'destination' id = 'destination' size = '30' /></td></tr>";
+				echo "<tr><td> Review </td><td>  <textarea name = 'text' id = 'text' rows = '4' cols = '36' placeholder='Write something..'></textarea></td></tr>";
+				echo "<tr><td> &nbsp; </td> <td> &nbsp; </td></tr>";
+				echo "<tr><td></td><td><input type = \"button\" value = 'Submit' onclick = \"ajaxFunction('$server','$user','$pwd','$dbName')\" />&nbsp;&nbsp;&nbsp;&nbsp;<input type = \"reset\" value = 'Reset' /></td></tr>";
+				echo "<!DOCTYPE html><html lang='en'><head><link href='commforum2.css' rel='stylesheet'></head><body>$display_string</body></html>";
+			?>
 
-
-<table id = "table2">
-	<tr>
-	<td id="dest">
-		<h3> Bali, Indonesia </h3>
-			<p> "Bali one of the best natural places in the world, I cant' explain Bali in a word. Bali is such a great place to visit and a bucket list destination. You will see the REAL nature here. And the 5 star hotels makes it more wonderful. Bali is covered with most amazing trees and and travelers from all over the world. Pack lots of light clothes it gets HOT. OH! and sunscreen of course." - John P. (Austin, TX) <p>
-<tr><td><br /></td></tr>
-<tr><td><br /></td></tr>
-	<td id="dest">
-		<h3> Machu Picchu, Peru </h3>
-			<p> "There are three main routes to Machu Picchu. There's the popular Inca Trail, the lesser traveled Lares Trek, and the one we chose, The Salkantay Trek. Each of these has a variation of days and you basically just start further up in the trail, or make a shortcut to trim off one day. Can't go wrong with either honestly, it was beautiful!" - Alana S. (Brooklyn, NY) <p>
-<tr><td><br /></td></tr>
-<tr><td><br /></td></tr>
-	<td id="dest">
-		<h3> Santorini, Greece </h3>
-			<p> "This place is totally awesome and is definitely a must see. Def one of the most beautiful places in Europe with cool White caldera views, amazing sunsets, great beaches and awesome food. Stay in or near Fira and rent a moto to get you round the island. Best swimming is at the amazing red beach or little known rock beach at the bottom of the cliff from Oia (some good cliff jumping here too). Parissa beach has loads of good bars and restaurants and watersports." - Sam N. (Brisbane, Australia)  <p>
-<tr><td><br /></td></tr>
-<tr><td><br /></td></tr>
-	<td id="dest">
-		<h3> Nosy Be, Madagascar</h3>
-			<p> “Nosy Be?” Is that a typo for “Noisy Bee?” Nope. It means “big island” and it is just that; a large island off the northwest coast of Madagascar. Audiophiles should visit in May, to experience the four-day Donia Music Festival. IT'S AWESOME." - Drew J. (Palo Alto, CA)<p>
-<tr><td><br /></td></tr>
-<tr><td><br /></td></tr>
-</table>
-
+		</form>
+	</table>
+	<div id = 'ajaxDiv'></div>
 
 </body>
 </html>
