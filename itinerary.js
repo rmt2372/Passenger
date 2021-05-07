@@ -48,7 +48,7 @@ function avgRating(){
 		starRating = ajaxRequest.responseText
 		starString = '\u2605'.repeat(Math.trunc(starRating))
 		starString += '\u2606'.repeat(Math.ceil(5-starRating));
-		starString += " " + starRating +"/5 stars";
+		starString += " " + parseFloat(starRating).toFixed(2) +"/5 stars";
 		$('#rating').text(starString)
 		}
 	
