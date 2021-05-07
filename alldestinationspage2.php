@@ -33,7 +33,7 @@
 	$dbName = "cs329e_bulko_aes4693";  
 	$mysqli = new mysqli ($server,$user,$pwd,$dbName);
 	
-	$command = "SELECT name, location, htmlPage, photo FROM destinations";
+	$command = "SELECT name, location, htmlPage, photo, rating FROM destinations";
 	$result = $mysqli->query($command);
 	$count = 0;
 	echo "<table id='destinations'>";
@@ -41,6 +41,8 @@
 		$dest = $row["name"];
 		$photo = $row["photo"];
 		$page = $row["htmlPage"];
+		$rating = $row['rating'];
+		$ratingStr = str_repeat("&#9733;", intval($rating));	
 	if ($count % 4 == 0){
 		if ($count != 0){
 			echo "</tr>";
@@ -48,7 +50,7 @@
 		echo "<tr>";
 	}
 	$count += 1;
-	echo "<td><a href='$page'><img height='150' width='150' src='dest_images/$photo'><br>$dest</a></td>";
+	echo "<td><a href='$page'><img height='150' width='150' src='dest_images/$photo'><br>$dest</a><br><span style='font-size:20pt; color:#fcba03'>$ratingStr</span></td>";
 	}
 	echo "</table>";
 	 ?>

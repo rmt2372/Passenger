@@ -1,3 +1,6 @@
+newRating = false
+dest = $('title').text()
+avgRating()
 $(function() {
 	$('#1star').click(function(){starClick(1)})
 	$('#2star').click(function(){starClick(2)})
@@ -20,19 +23,39 @@ function starClick(stars){
 	}
 }
 
-dest = $('title').text()
 function updateRating(){
 	ajaxRequest = new XMLHttpRequest();
 	ajaxRequest.onreadystatechange = function(){
 		if (ajaxRequest.readyState == 4){
-			//update star rating in top bar
 			//response text
 			responseDisplay = document.getElementById('ratingFeedback')
 			responseDisplay.innerHTML = ajaxRequest.responseText
+			newRating = true
+			avgRating()
 		}
 	}
 	queryString = "?dest=" + dest + "&stars=" + myRating
 	ajaxRequest.open("GET", "rating.php" + queryString, true)
 	ajaxRequest.send()
+}
+
+function avgRating(){
+	ajaxRequest = new XMLHttpRequest();
+	ajaxRequest.onreadystatechange = function(){
+		if (ajaxRequest.readyState == 4){
+		//	updatedStars = document.getElementById('totalRating')
+		//updatedStars.innerHTML = ajaxRequest.responseText
+		starRating = ajaxRequest.responseText
+		starString = '\u2605'.repeat(Math.trunc(starRating))
+		starString += '\u2606'.repeat(Math.ceil(5-starRating));
+		starString += " " + starRating +"/5 stars";
+		$('#rating').text(starString)
+		}
+	
+	}
+	queryString = "?new=" + newRating + "&dest=" + dest
+	ajaxRequest.open("GET", "newRating.php" + queryString, true)
+	ajaxRequest.send()
+
 
 }
