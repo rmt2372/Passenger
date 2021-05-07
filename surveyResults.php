@@ -4,7 +4,8 @@
                 <meta charset="UTF-8">
                 <title> Destination Survey </title>
                 <link href="all_dest.css" rel="stylesheet">
-                <link rel="icon" href="mini_logo.png">
+		<link href="leftnav.css" rel="stylesheet">
+		<link rel="icon" href="mini_logo.png">
         </head>
 <body>
 <div id="leftnav">
