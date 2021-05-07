@@ -11,7 +11,7 @@
 		//username and password not found in table - need to add
 		$command = "INSERT INTO passengerLogin VALUES ('$username', '$password')";
 		$result = $mysqli->query($command);
-		setcookie("login", true, time()+ 1200, "/");
+		setcookie("login", $username, time()+ 1200, "/");
 		session_start();
 		//can set header location
 		echo "Success!";

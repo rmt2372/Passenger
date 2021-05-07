@@ -1,30 +1,38 @@
-document.addEventListener('DOMContentLoaded', function(){
-    var stars = document.querySelectorAll('.star');
-    stars.forEach(function(star){
-        star.addEventListener('click', setRating); 
-    });
-    
-    var rating = parseInt(document.querySelector('.stars').getAttribute('data-rating'));
-    var target = stars[rating - 1];
-    target.dispatchEvent(new MouseEvent('click'));
-});
+$(function() {
+	$('#1star').click(function(){starClick(1)})
+	$('#2star').click(function(){starClick(2)})
+	$('#3star').click(function(){starClick(3)})
+	$('#4star').click(function(){starClick(4)})
+	$('#5star').click(function(){starClick(5)})
+})
+function starClick(stars){
+	myRating = stars
+	for (i=0; i<=5; i++){
+		if (i <= stars){
+			$('#' + i +"star").text('\u2605')       
+			$('#' + i + "star").css("font-size", "36pt")
+                }
+		else{
+			$('#' + i +"star").text('\u2606') 
+			$('#' + i + "star").css("font-size", "30pt")
+		}
+	updateRating()
+	}
+}
 
-function setRating(ev){
-    var span = ev.currentTarget;
-    var stars = document.querySelectorAll('.star');
-    var match = false;
-    var num = 0;
-    stars.forEach(function(star, index){
-        if(match) {
-            star.classList.remove('rated');
-        }else {
-            star.classList.add('rated');
-        }
-        //are we currently looking at the span that was clicked
-        if(star === span) {
-            match = true;
-            num = index + 1;
-        }
-    });
-    document.querySelector('.stars').setAttribute('data-rating', num);
+dest = $('title').text()
+function updateRating(){
+	ajaxRequest = new XMLHttpRequest();
+	ajaxRequest.onreadystatechange = function(){
+		if (ajaxRequest.readyState == 4){
+			//update star rating in top bar
+			//response text
+			responseDisplay = document.getElementById('ratingFeedback')
+			responseDisplay.innerHTML = ajaxRequest.responseText
+		}
+	}
+	queryString = "?dest=" + dest + "&stars=" + myRating
+	ajaxRequest.open("GET", "rating.php" + queryString, true)
+	ajaxRequest.send()
+
 }

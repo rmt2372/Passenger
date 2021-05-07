@@ -6,6 +6,8 @@
     <link href="itinerary.css" rel="stylesheet">
     <link rel="stylesheet" href="leftnav.css">
     <script type = "text/javascript" src= "./itinerary.js" defer></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
     <link rel="icon" href="mini_logo.png">
 </head>
 
@@ -17,7 +19,7 @@
         <ul style="list-style-type:none; padding: 0;">
             <li><a href="Passenger.html">HOME</a></li>
             <li><a href="survey.html">DESTINATION SURVEY</a> </li>
-            <li><a href="alldestinationspage2.html">ALL DESTINATIONS </a></li>
+            <li><a href="alldestinationspage2.php">ALL DESTINATIONS </a></li>
             <li><a href="forum.php">FORUM </a></li>
             <li> <a href="contactpage.html">CONTACT US</a></li>
         </ul>  
@@ -29,7 +31,7 @@
             <h1> South Island, New Zealand</h1>
             <div id="rating"> Rating: 4/5</div>
             <!-- <div class="stars" data-rating="3">
-                <span style="font-size: 20px; padding-right: 20px;">Reviews </span>
+                <span style="font-size: 20px; padding-right: 20px;">Rate this destination </span>
                 <span class="star">&nbsp;</span>
                 <span class="star">&nbsp;</span>
                 <span class="star">&nbsp;</span>
@@ -43,7 +45,7 @@
         <div id="column2">
             <h1> Itinerary</h1>
             <strong>Stay Here: <a href="https://rainforest.nz/"> Rainforest Retreat</a></strong>
-            <p>Booking made easy! Click the link above to book your stay. Rainforest Retreat is In a village at the foot of the Southern Alps, this laid-back 
+            <p><em style="color:#37bfbf">Booking made easy! Click the link above to book your stay.</em><br> Rainforest Retreat is In a village at the foot of the Southern Alps, this laid-back 
                 lodge off the Franz Josef Highway is 6 km from the Franz Josef Glacier and 10 km 
                 from Lake Mapourika. The feel of the hotel is very rustic and makes it feel like
                 your camping with nature!</p>
@@ -65,8 +67,16 @@
                 across the water, this mountain takes on of our top spots for South Island experiences. </p>
         </div>
         <div id="container">
-            <h2>Reviews</h2>
-            <div id="row">
+            <h2>Rate this destination</h2>
+	    <div style="font-size:30pt; color:#fcba03">
+                <span id="1star">&#9734;</span>
+                <span id="2star">&#9734;</span>
+                <span id="3star">&#9734;</span>
+                <span id="4star">&#9734;</span>
+                <span id="5star">&#9734;</span>
+        </div>
+	<div id="ratingFeedback"></id>
+	    <!--	    <div id="row">
                 <p id="review"><em>“This is my 3rd time going to New Zealand. I can't get enough! Passenger recommeded Fleur's Place and it was amazing. - Anonymous”</em></p>
             </div>
             <div id="row">
@@ -75,7 +85,7 @@
             <div id="row">
                 <p id="review"><em>“Rainforest Retreat is a really convenient location! You'll love it and all the amenties. - Taylor G.”</em></p>
             </div>
-        </div>
+-->        </div>
 
 <!--         <div id="footer">
             Page last updated 04/3/2021

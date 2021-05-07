@@ -15,7 +15,7 @@
     <ul style="list-style-type:none; padding: 0;">
   <li><a href="Passenger.html">HOME</a></li>
   <li><a href="survey.html">DESTINATION SURVEY</a> </li>
-  <li><a href="alldestinationspage2.html">ALL DESTINATIONS </a></li>
+  <li><a href="alldestinationspage2.php">ALL DESTINATIONS </a></li>
   <li><a href="forum.php">FORUM </a></li>
   <li> <a href="contactpage.html">CONTACT US</a></li>
 </ul>  
@@ -27,7 +27,7 @@
 <?php
 	$username = $_POST['user'];
 	$password = $_POST['pass'];
-	 $mysqli = new mysqli('spring-2021.cs.utexas.edu', 'cs329e_bulko_rmt2372', 'Wash9runway*Organ', 'cs329e_bulko_rmt2372');
+	 $mysqli = new mysqli('spring-2021.cs.utexas.edu', 'cs329e_bulko_aes4693', 'door4Along3Enough', 'cs329e_bulko_aes4693');
 
         $command = "SELECT * FROM passengerLogin WHERE
                 username = '$username' AND password = '$password'";
@@ -40,10 +40,9 @@
 		echo '<span style="color:red">Invalid account. Please create an account to continue.</span>';
 
         } else {
-		setcookie("login", true, time() + 1200, "/");
+		setcookie("login", $username, time() + 1200, "/");
 		session_start();
 		//can set header location
-		echo "kjsdjghsdkjgh";
 		header('Location: forum.php');
 	}
 	}

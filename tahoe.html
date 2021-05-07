@@ -6,6 +6,8 @@
     <link href="itinerary.css" rel="stylesheet">
     <link rel="stylesheet" href="leftnav.css">
     <script type = "text/javascript" src= "./itinerary.js" defer></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
     <link rel="icon" href="mini_logo.png">
 </head>
 
@@ -17,7 +19,7 @@
         <ul style="list-style-type:none; padding: 0;">
             <li><a href="Passenger.html">HOME</a></li>
             <li><a href="survey.html">DESTINATION SURVEY</a> </li>
-            <li><a href="alldestinationspage2.html">ALL DESTINATIONS </a></li>
+            <li><a href="alldestinationspage2.php">ALL DESTINATIONS </a></li>
             <li><a href="forum.php">FORUM </a></li>
             <li> <a href="contactpage.html">CONTACT US</a></li>
         </ul>  
@@ -29,7 +31,7 @@
             <h1>Lake Tahoe, California</h1>
             <div id="rating"> Rating: 4/5</div>
             <!-- <div class="stars" data-rating="3">
-                <span style="font-size: 20px; padding-right: 20px;">Reviews </span>
+                <span style="font-size: 20px; padding-right: 20px;">Rate this destination </span>
                 <span class="star">&nbsp;</span>
                 <span class="star">&nbsp;</span>
                 <span class="star">&nbsp;</span>
@@ -43,15 +45,24 @@
         <div id="column2">
             <h1> Itinerary</h1>
             <strong>Stay Here: <a href="https://www.tahoeblackbear.com/">Black Bear Lodge</a> </strong>
-            <p>Booking made easy! Click the link above to book your stay. At Black Bear Lodge, we foster feelings of well-being, connection and warmth - a feeling of belonging to the moment and to each other. Here, we shed distractions and celebrate every day. Vacation in your own private mountain cabin. Our cabins offer more space and the chance to unwind with your person. Located in South Lake Tahoe, we are ideally situated between the shores of Lake Tahoe and the slopes of Heavenly Mountain. 0.5 mile to the beach and 1.0 mile to the mountain with shops and restaurants in between.</p>
+            <p><em style="color:#37bfbf">Booking made easy! Click the link above to book your stay.</em><br> At Black Bear Lodge, we foster feelings of well-being, connection and warmth - a feeling of belonging to the moment and to each other. Here, we shed distractions and celebrate every day. Vacation in your own private mountain cabin. Our cabins offer more space and the chance to unwind with your person. Located in South Lake Tahoe, we are ideally situated between the shores of Lake Tahoe and the slopes of Heavenly Mountain. 0.5 mile to the beach and 1.0 mile to the mountain with shops and restaurants in between.</p>
             <strong>Eat Here: Empanash</strong>
             <p>We are a small family-owned catering business, located in the heart of  South Lake Tahoe. As long-time members of this blossoming community, we wanted to contribute to the food renaissance we are currently experiencing on our shore with a little-known delicacy from our Argentine culture.</p>
             <strong>Go Here: Cross Country Ski Just Below the Flanks of Mt. Tallac </strong>
             <p>While most destinations talk a big game that they’re the most beautiful place to cross country ski, Tahoe South backs it up. As winter arrives, Camp Richardson provides visitors an opportunity to schuss their way right on the shores of Lake Tahoe. And if that isn’t enough, you also have the most prominent peak in the basin reaching thousands of feet high looking down upon you. </p>
         </div>
         <div id="container">
-            <h2>Reviews</h2>
-            <div id="row">
+            <h2>Rate this destination</h2>
+	    <div style="font-size:30pt; color:#fcba03">
+                <span id="1star">&#9734;</span>
+                <span id="2star">&#9734;</span>
+                <span id="3star">&#9734;</span>
+                <span id="4star">&#9734;</span>
+                <span id="5star">&#9734;</span>
+	    </div>
+	    <div id="ratingFeedback"></id>
+
+<!--	    <div id="row">
                 <p id="review"><em>“We had so much fun here! There’s a lot of activities for kids and adults. Great atmosphere. - Anonymous”</em></p>
             </div>
             <div id="row">
@@ -60,7 +71,7 @@
             <div id="row">
                 <p id="review"><em>“Relaxing things to do as well as adventurous activities. Great for all types of people.- Lacey R.”</em></p>
             </div>
-        </div>
+-->        </div>
 
 <!--         <div id="footer">
             Page last updated 04/3/2021
